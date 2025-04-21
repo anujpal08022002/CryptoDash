@@ -14,7 +14,7 @@ const Coin = () => {
   const fetchCoinData = async ()=>{
     const options = {
       method: 'GET',
-      headers: {accept: 'application/json', 'x-cg-demo-api-key': 'CG-Hr24akFT7C4PSHQCsyRpcEhm'}
+      headers: {accept: 'application/json', 'x-cg-demo-api-key': process.env.REACT_APP_API_KEY}
     };
     
     fetch(`https://api.coingecko.com/api/v3/coins/${coinId}`, options)
@@ -26,7 +26,7 @@ const Coin = () => {
   const fetchHistoricalData = async ()=>{
     const options = {
       method: 'GET',
-      headers: {accept: 'application/json', 'x-cg-demo-api-key': 'CG-Hr24akFT7C4PSHQCsyRpcEhm'}
+      headers: {accept: 'application/json', 'x-cg-demo-api-key': process.env.REACT_APP_API_KEY}
     };
     
     fetch(`https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=${currency.name}&days=10&interval=daily`, options)
